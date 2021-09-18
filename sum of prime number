@@ -1,0 +1,20 @@
+def sum_of_primes(x):
+    isPrime = 1
+    for i in range (2,int(x/2),1):
+        if(x % i == 0):
+            isPrime = 0
+            break
+    return isPrime
+
+x= int(input("Enter a number : "))
+
+a = 0;
+i=2
+for i in range (2,int(x/2),1):
+    if(sum_of_primes(i) == 1):
+        if(sum_of_primes(x-i) == 1):
+            if x%2==0:
+                print(x,i,"and",x-i)
+                a = 1;
+if (a == 0):
+    print(x,"cannot be expressed as the sum of two prime numbers because it is not even")
